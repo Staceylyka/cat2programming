@@ -1,0 +1,101 @@
+<html>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #6c1b60;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .container {
+            background-color: #9eaac3;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        input, textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        button {
+            padding: 10px;
+            background-color: #5cb85c;
+            color: rgb(247, 238, 238);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            document.getElementById('obituaryForm') 
+            // Get form elements
+            var name = document.getElementById('name').value;
+            var dob = document.getElementById('dob').value;
+            var dod = document.getElementById('dod').value;
+            var context = document.getElementById('context').value;
+            var author = document.getElementById('author').value;
+        
+            // Validate form inputs
+            if (!name || !dob || !dod || !context || !author) {
+                alert('Please fill in all fields.');
+                event.preventDefault();
+                return;
+            }
+
+            return valid;
+        }
+        
+    </script>
+    <body>
+        <div class="container">
+
+        <form method="post" action="submit_obituary">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+    
+            <label for="date_of_birth">Date of birth:</label>
+            <input type="date" id="dob" name="dob"><br>
+
+            <label for="date_of_death">Date of death:</label>
+            <input type="date" id="dod" name="dod"><br>
+    
+            
+            <label for="context">Context:</label>
+            <textarea id="context" name="context" rows="5" required></textarea>
+            
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required>
+
+            <input type="submit" value="submit">
+        </form>
+    </div>
+    </body>
+</html>
